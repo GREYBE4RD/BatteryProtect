@@ -13,6 +13,40 @@ The app is intentionally minimal. It has no ads, analytics, network access, fore
 
 **v1.1.3**
 
+## Quick compatibility check
+
+Before installing, you can check whether your phone exposes the Samsung-style battery-protection control currently confirmed to work with Battery Protect.
+
+With ADB connected, run:
+
+```text
+adb shell settings get global protect_battery
+```
+
+If the result is:
+
+```text
+0
+```
+
+or:
+
+```text
+1
+```
+
+the phone exposes the same `Settings.Global.protect_battery` control used by the confirmed Samsung backend, so it is likely compatible.
+
+If the result is:
+
+```text
+null
+```
+
+that specific control is not exposed on the device. Battery Protect may report the phone as unsupported unless another compatible OEM control is detected.
+
+This check only confirms that the setting exists. For a stronger test, manually toggle the phone's own battery-protection feature and confirm the value changes between `0` and `1`.
+
 ## Confirmed compatibility
 
 Confirmed working on:
