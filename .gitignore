@@ -1,0 +1,23 @@
+# Gradle / Android Studio
+.gradle/
+.idea/
+**/build/
+*.iml
+local.properties
+
+# Release/build artifacts
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# Signing material - never commit
+*.jks
+*.keystore
+keystore.properties
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*~
